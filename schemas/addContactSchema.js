@@ -18,6 +18,8 @@ const addContactSchema = Joi.object({
     .max(15)
     .pattern(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im)
     .required(),
+  
+  favorite: Joi.boolean()
 });
 
 module.exports = addContactSchema;

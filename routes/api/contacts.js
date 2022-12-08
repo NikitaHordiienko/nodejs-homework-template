@@ -11,10 +11,21 @@ router.get('/', controllerWrapper(controllers.listContacts));
 
 router.get('/:contactId', controllerWrapper(controllers.getContactById));
 
-router.post('/', validateBody(schemas.addContactSchema), controllerWrapper(controllers.addContact));
+router.post('/',
+    validateBody(schemas.addContactSchema),
+    controllerWrapper(controllers.addContact)
+);
 
 router.delete('/:contactId', controllerWrapper(controllers.removeContact))
 
-router.put('/:contactId', validateBody(schemas.updateContactSchema), controllerWrapper(controllers.updateContact))
+router.put('/:contactId',
+    validateBody(schemas.updateContactSchema),
+    controllerWrapper(controllers.updateContact)
+)
 
-module.exports = router
+router.patch('/:contactId/favorite',
+    validateBody(schemas.updateFavoriteSchema),
+    controllerWrapper(controllers.updateStatusContact)
+)
+
+module.exports = router;
