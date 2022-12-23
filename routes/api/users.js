@@ -33,4 +33,10 @@ router.patch('/',
     controllerWrapper(controllers.updateUsersSubscription)
 );
 
+router.patch('/avatars',
+    middlewares.authenticate,
+    middlewares.upload.single('avatar'),
+    controllerWrapper(controllers.updateAvatar)
+);
+
 module.exports = router;
