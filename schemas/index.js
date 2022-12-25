@@ -4,6 +4,7 @@ const updateFavoriteSchema = require('./contacts/updateFavoriteSchema');
 const registerUserSchema = require('./users/registerUserSchema');
 const loginUserSchema = require('./users/loginUserSchema');
 const updateSubscriptionSchema = require('./users/updateSubscriptionSchema');
+const resendVerificationSchema = require('./users/resendVerificationSchema');
 
 
 module.exports = {
@@ -13,4 +14,5 @@ module.exports = {
     registerUserSchema,
     loginUserSchema,
     updateSubscriptionSchema,
+    resendVerificationSchema,
 }
